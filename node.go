@@ -154,7 +154,7 @@ func (n *EmphasisNode) Tag() (s string) {
 	return
 }
 
-// Return the html representation of emphasis text.
+// Render returns the html representation of emphasis text.
 func (n *EmphasisNode) Render() string {
 	var s string
 	for _, node := range n.Nodes {
@@ -199,7 +199,7 @@ type CodeNode struct {
 	Lang, Text string
 }
 
-// Return the html representation of codeBlock
+// Render returns the html representation of codeBlock
 func (n *CodeNode) Render() string {
 	var attr string
 	if n.Lang != "" {
@@ -223,7 +223,7 @@ type LinkNode struct {
 	Nodes       []Node
 }
 
-// Return the html representation of link node
+// Render returns the html representation of link node
 func (n *LinkNode) Render() (s string) {
 	for _, node := range n.Nodes {
 		s += node.Render()
